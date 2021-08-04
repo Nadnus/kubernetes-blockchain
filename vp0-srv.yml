@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+ creationTimestamp: null
+name: vp0
+namespace: default
+spec:
+ type: NodePort
+ports:
+ -name: "port1"
+port: 7050
+protocol: ""
+targetPort: 0 - name: "port2"
+nodePort: 0
+port: 7051
+protocol: ""
+targetPort: 0 - name: "port3"
+nodePort: 0
+port: 7053
+protocol: ""
+targetPort: 0
+selector:
+ service: vp0
+status:
+ loadBalancer: {}
